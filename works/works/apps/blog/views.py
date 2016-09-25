@@ -5,13 +5,13 @@ from works.apps.blog.models import Blog, Category
 # Create your views here.
 
 def home(request):
-    blogs = Blog.objects.all()[:5]
+    blogs = Blog.objects.all().order_by('-date_created')[:5]
 
     return render(request,'blog/index.html', {'blogs': blogs})
 
 
 def full_width(request):
-    blogs = Blog.objects.all()
+    blogs = Blog.objects.all().order_by('-date_created')
     return render(request, 'blog/full-width.html', {'blogs': blogs})
 
 def about(request):
