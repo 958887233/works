@@ -3,36 +3,36 @@
 {% load custom_markdown %}
 
 {% block context %}
-
   <body>
     <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
-
     <div class="content-body">
       <div class="container">
         <div class="row">
-          <main class="col-md-8">
+          <main class="col-xs-12 col-sm-6 col-md-8">
+          {% for blog in blogs %}
             <article class="post post-1">
               <header class="entry-header">
-                <h1 class="entry-title">
-                  <a href="{% url 'single' %}">{{ blog.title }}</a>
+                <h1 class="entry-title col-xs-12 col-sm-6 col-md-8">
+                  <a href="{% url 'single' id=blog.id %}">{{ blog.title }}</a>
                 </h1>
-                <div class="entry-meta">
+                <div class="entry-meta col-xs-12 col-sm-6 .col-md-8">
                   <span class="post-category"><a href="#">{{ blog.category.name }}</a></span>
 
-                  <span class="post-date"><a href="#"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">{{ blog.date_created }}</time></a></span>
+                  <span class="post-date"><a href="#"><time class="entry-date">{{ blog.date_created | date:"Y /m /d" }}</time></a></span>
 
                   <span class="post-author"><a href="#">贾利欣</a></span>
 
                   <span class="comments-link"><a href="#">4 Comments</a></span>
                 </div>
               </header>
-              <div class="entry-content clearfix">
-                {{ blog.context | custom_markdown }}
+              <div class="col-xs-12 col-sm-6 col-md-8">
+                {{ blog.context | safe |truncatechars:100}}
                 <div class="read-more cl-effect-14">
-                  <a href="#" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
+                  <a href="{% url 'single' id=blog.id %}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
                 </div>
               </div>
             </article>
+            {% endfor %}
 
           </main>
           <aside class="col-md-4">
@@ -93,5 +93,4 @@
         </div>
       </div>
     </footer>
-
 {% endblock %}
