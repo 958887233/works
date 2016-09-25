@@ -1,0 +1,7 @@
+
+
+{% load custom_markdown %}
+{{ blog.title }}
+{{ blog.context | custom_markdown }}
+{{ blog.category.name }}
+{{ blog.date_created }}
