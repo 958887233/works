@@ -43,33 +43,15 @@
                 {% endfor %}
               </ul>
             </div>
-            <div class="widget widget-archives">
-              <h3 class="widget-title">Archives</h3>
-              <ul>
-                <li>
-                  <a href="#">November 2014</a>
-                </li>
-                <li>
-                  <a href="#">September 2014</a>
-                </li>
-                <li>
-                  <a href="#">January 2013</a>
-                </li>
-              </ul>
-            </div>
 
             <div class="widget widget-category">
-              <h3 class="widget-title">Category</h3>
+              <h3 class="widget-title">博客分类</h3>
               <ul>
+              {% for category in categorys%}
                 <li>
-                  <a href="#">Web Design</a>
+                  <a href="{% url 'full-width'%}">{{ category.name }} ( {{ category.blog_set.count }} )</a>
                 </li>
-                <li>
-                  <a href="#">Web Development</a>
-                </li>
-                <li>
-                  <a href="#">SEO</a>
-                </li>
+                {% endfor %}
               </ul>
             </div>
           </aside>
