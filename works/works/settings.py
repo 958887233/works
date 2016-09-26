@@ -120,6 +120,6 @@ SERVER_HOST = 'https://www.jialixin.top'
 
 
 try:
-    from portal.local_settings import *
+    from local_settings import *
 except:
     pass
