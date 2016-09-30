@@ -9,9 +9,10 @@ class BlogForm(forms.ModelForm):
   class Meta:
     model = Blog
     fields = '__all__'
+
 class BlogAdmin(admin.ModelAdmin):
   form = BlogForm
 
-# admin.site.register(Blog)
+
 admin.site.register(Category)
 admin.site.register(Blog,BlogAdmin)
