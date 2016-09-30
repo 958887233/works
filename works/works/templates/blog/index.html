@@ -3,7 +3,6 @@
 {% load custom_markdown %}
 
 {% block context %}
-  <body>
     <div class="col-md-10 col-md-offset-1">
         <div class="row">
           <main class="col-xs-12 col-sm-6 col-md-8">
@@ -49,7 +48,7 @@
               <ul>
               {% for category in categorys%}
                 <li>
-                  <a href="{% url 'full-width'%}">{{ category.name }} ( {{ category.blog_set.count }} )</a>
+                  <a href="{% url 'category' category.name %}">{{ category.name }} ( {{ category.blog_set.count }} )</a>
                 </li>
                 {% endfor %}
               </ul>

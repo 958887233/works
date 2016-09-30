@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% load custom_markdown %}
     <head>
-        <title>用心写好每一篇博客</title>
+        <title>我的博客</title>
 
         <!-- meta -->
         <meta charset="UTF-8">
@@ -64,8 +64,12 @@
         </div>
       </header>
     </div>
-    {% block context %}
-    {% endblock %}
+    <div class="content-body">
+      <div class="container">
+        {% block context %}
+        {% endblock %}
+      </div>
+    </div>
 
     <!-- Mobile Menu -->
     <div class="overlay overlay-hugeinc">
@@ -79,7 +83,6 @@
         </ul>
       </nav>
     </div>
-
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

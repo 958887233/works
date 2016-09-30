@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from works.apps.blog.models import Blog, Category
+from works.apps.blog.forms import BlogForm
 
 
 # Create your views here.
@@ -28,3 +29,15 @@ def contact(request):
 def detail(request, id):
     blog = get_object_or_404(Blog, id=id)
     return render(request, 'blog/single.html', {'blog': blog})
+
+def category(request, category):
+    blogs = Blog.objects.filter(category__name=category)
+    return render(request, 'blog/category.html', {'blogs': blogs})
+
+
+def blog_form(request):
+    blog_form = BlogForm()
+    if request.method == 'POST':
+        blog_form = BlogForm(request.POST)
+
+    return render(request, 'blog/edit.html', {'form': blog_form})
