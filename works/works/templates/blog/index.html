@@ -48,7 +48,7 @@
               <ul>
               {% for category in categorys%}
                 <li>
-                  <a href="">{{ category.name }} ( {{ category.blog_set.count }} )</a>
+                  <a href="{% url 'category' category.name %}">{{ category.name }} ( {{ category.blog_set.count }} )</a>
                 </li>
                 {% endfor %}
               </ul>
