@@ -60,9 +60,26 @@ a:hover, a:focus {
 	background-color: #eee;
 }
 
+
+.logo{
+	margin-top: 10px;
+	display: inline-block;
+}
+
 body {
+	padding-top: 160px;
+	padding-bottom: 42px;
 	color: #444;
 	font-family: 'Lato', sans-serif;
+}
+
+.sticky-header {
+  box-shadow: 0 4px 10px 0 rgba(67, 67, 67, 0.06);
+  background: #434343 !important;
+}
+
+.sticky-header .navbar-nav > li > a {
+	color: #fff !important;
 }
 
 p {
@@ -801,4 +818,30 @@ figure {
 	.overlay ul li {
 		min-height: 34px;
 	}
+}
+
+.navigation {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: .3s all;
+  transition: .3s all;
+}
+
+.navigation .navbar-nav > li.active a {
+	color: #546CC3;
+}
+
+.navigation .navbar-nav > li > a {
+	color: #000000;
+	font-size: 20px;
+	line-height: 40px;
+	padding: 20px 15px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	-webkit-transition: .2s ease-in-out 0s;
+	transition: .2s ease-in-out 0s;
+}
+
+.navigation .navbar-nav > li > a:hover, .navigation .navbar-nav > li > a:active, .navigation .navbar-nav > li > a:focus {
+	background: none;
+    color: #87898e;
 }

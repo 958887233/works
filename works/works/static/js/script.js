@@ -1,6 +1,6 @@
 var searchvisible = 0;
 
-$("#search-menu").click(function(e){ 
+$("#search-menu").click(function(e){
     //This stops the page scrolling to the top on a # link.
     e.preventDefault();
 
@@ -13,14 +13,14 @@ $("#search-menu").click(function(e){
          val.removeClass('ion-ios-close-empty');
         val.addClass('ion-ios-search-strong');
     }
-    
-    
+
+
     if (searchvisible ===0) {
         //Search is currently hidden. Slide down and show it.
         $("#search-form").slideDown(200);
         $("#s").focus(); //Set focus on the search input field.
         searchvisible = 1; //Set search visible flag to visible.
-    } 
+    }
 
     else {
         //Search is currently showing. Slide it back up and hide it.
@@ -29,10 +29,22 @@ $("#search-menu").click(function(e){
     }
 });
 
+$(window).scroll(function() {
+var scroll = $(window).scrollTop();
+ //console.log(scroll);
+if (scroll > 200) {
+    //console.log('a');
+    $(".navigation").addClass("sticky-header");
+} else {
+    //console.log('a');
+    $(".navigation").removeClass("sticky-header");
+}});
+
+
 /*!
  * classie - class helper functions
  * from bonzo https://github.com/ded/bonzo
- * 
+ *
  * classie.has( elem, 'my-class' ) -> true/false
  * classie.add( elem, 'my-new-class' )
  * classie.remove( elem, 'my-unwanted-class' )
@@ -147,6 +159,7 @@ if ( typeof define === 'function' && define.amd ) {
         }
     }
 
-    triggerBttn.addEventListener( 'click', toggleOverlay );
+    // triggerBttn.addEventListener( 'click', toggleOverlay );
     closeBttn.addEventListener( 'click', toggleOverlay );
 })();
+
