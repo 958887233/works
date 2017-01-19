@@ -1,21 +1,18 @@
 from django.contrib import admin
 from works.apps.blog.models import *
-# from works.apps.blog.forms import BlogForm
 from django import forms
 from pagedown.widgets import AdminPagedownWidget
 
 # Register your models here.
 class BlogForm(forms.ModelForm):
-    content = forms.CharField(widget=AdminPagedownWidget())
-
-    class Meta:
-        model = Blog
-        fields = '__all__'
+  content = forms.CharField(widget=AdminPagedownWidget())
+  class Meta:
+    model = Blog
+    fields = '__all__'
 
 class BlogAdmin(admin.ModelAdmin):
-    form = BlogForm
+  form = BlogForm
 
 
-# admin.site.register(Blog)
 admin.site.register(Category)
-admin.site.register(Blog, BlogAdmin)
+admin.site.register(Blog,BlogAdmin)
