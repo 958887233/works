@@ -3,7 +3,7 @@
 {% load staticfiles %}
 {% load custom_markdown %}
   <head>
-      <title>Black &amp; White</title>
+      <title>随笔与摄影</title>
 
       <!-- meta -->
       <meta charset="UTF-8">
@@ -11,90 +11,124 @@
 
       <!-- css -->
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-      <link rel="stylesheet" href="{% static 'css/pace.css' %}">
-      <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+      <!-- <link rel="stylesheet" href="{% static 'css/pace.css' %}"> -->
+      <link rel="stylesheet" href="{% static 'css/common.css' %}">
+      <!-- <link rel="stylesheet" href="http://fonts.useso.com/css?family=Open+Sans:300,400"> -->
 
-      <!-- js -->
-      <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
-      <script src="{% static 'js/bootstrap.min.js' %}"></script>
-      <script src="{% static 'js/pace.min.js' %}"></script>
-      <script src="{% static 'js/modernizr.custom.js' %}"></script>
+      <!-- Bootstrap style -->
+      <link rel="stylesheet" href="{% static 'css/templatemo-style.css' %}">
+      <!-- <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}"> -->
+      <!-- <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"> -->
+
+
   </head>
 
 
   <body>
-    <header class="navigation navbar navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <!-- responsive nav button -->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- /responsive nav button -->
 
-          <!-- logo -->
-          <a class="navbar-brand logo" href="{% url 'home' %}">
-            <img src="{% static 'img/logo.png' %}" alt="Meghna" />
-          </a>
-          <!-- /logo -->
-        </div>
+    <div class="tm-header">
+        <div class="container-fluid">
+            <div class="tm-header-inner">
+                <a href="#" class="navbar-brand tm-site-name">随笔与摄影</a>
+                <!-- navbar -->
+                <nav class="navbar tm-main-nav">
 
-        <!-- main nav -->
-        <nav class="collapse navbar-collapse navbar-right">
-          <ul id="nav" class="nav navbar-nav menu">
-            <li class="current"><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'full-width' %}">Archives</a></li>
-            <li><a href="{% url 'about' %}">Tags</a></li>
-            <li><a href="{% url 'contact' %}">Categories</a></li>
-            <li><a href="#">Search</a></li>
-          </ul>
-        </nav>
-        <!-- /main nav -->
-      </div>
-    </header>
+                    <button class="navbar-toggler hidden-md-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                        &#9776;
+                    </button>
 
-            <div id="header-search-box">
-              <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
-              <div id="search-form" class="search-form">
-                <form role="search" method="get" id="searchform" action="#">
-                  <input type="search" placeholder="Search" required>
-                  <button type="submit"><span class="ion-ios-search-strong"></span></button>
-                </form>
-              </div>
+                    <div class="collapse navbar-toggleable-sm" id="tmNavbar">
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item active">
+                                <a href="{% url 'home' %}" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'full-width' %}" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="blog.html" class="nav-link">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="contact.html" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
             </div>
-
-    <div class="content-body">
-      <div class="container">
-        {% block context %}
-        {% endblock %}
-      </div>
-    </div>
-
-    <footer id="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="copyright">&copy; 2014 ThemeWagon.com -More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
-          </div>
         </div>
-      </div>
-    </footer>
-    <!-- Mobile Menu -->
-    <div class="overlay overlay-hugeinc">
-      <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="full-width.html">Blog</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
     </div>
-    <script src="{% static 'js/script.js' %}"></script>
+
+    <hr>
+
+    {% block context %}
+    {% endblock %}
+
+                <aside class="col-md-4 blog-aside">
+
+                    <div class="aside-widget">
+                        <header>
+                            <h3>精品文章</h3>
+                        </header>
+                        <div class="body">
+                            <ul class="clean-list">
+                                <li><a href="">Clean - Responsive HTML5 Template</a></li>
+                                <li><a href="">Responsive Pricing Table</a></li>
+                                <li><a href="">Yellow HTML5 Template</a></li>
+                                <li><a href="">Blackor Responsive Theme</a></li>
+                                <li><a href="">Portfolio Bootstrap Template</a></li>
+                                <li><a href="">Clean Slider Template</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="aside-widget">
+                        <header>
+                            <h3>最近发表</h3>
+                        </header>
+                        <div class="body">
+                            <ul class="clean-list">
+                                <li><a href="">Blackor Responsive Theme</a></li>
+                                <li><a href="">Portfolio Bootstrap Template</a></li>
+                                <li><a href="">Clean Slider Template</a></li>
+                                <li><a href="">Clean - Responsive HTML5 Template</a></li>
+                                <li><a href="">Responsive Pricing Table</a></li>
+                                <li><a href="">Yellow HTML5 Template</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="aside-widget">
+                        <header>
+                            <h3>标签</h3>
+                        </header>
+                        <div class="body clearfix">
+                            <ul class="tags">
+                                <li><a href="#">HTML5</a></li>
+                                <li><a href="#">CSS3</a></li>
+                                <li><a href="#">COMPONENTS</a></li>
+                                <li><a href="#">TEMPLATE</a></li>
+                                <li><a href="#">PLUGIN</a></li>
+                                <li><a href="#">BOOTSTRAP</a></li>
+                                <li><a href="#">TUTORIAL</a></li>
+                                <li><a href="#">UI/UX</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+    <script src="{% static 'js/jquery-2.1.3.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <!-- <script src="{% static 'js/modernizr.custom.js' %}"></script> -->
+    <script src="{% static 'js/tether.min.js' %}"></script>
+
 
   </body>
 </html>

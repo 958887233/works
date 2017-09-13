@@ -6,7 +6,7 @@ from works.apps.blog.forms import BlogForm
 # Create your views here.
 
 def home(request):
-    blogs = Blog.objects.all().order_by('-date_created')[:3]
+    blogs = Blog.objects.all().order_by('-date_created')[:6]
     categorys = Category.objects.all()
 
     return render(request,'blog/index.html', {'blogs': blogs, 'categorys': categorys})
@@ -37,6 +37,7 @@ def category(request, category):
 
 def blog_form(request):
     blog_form = BlogForm()
+
     if request.method == 'POST':
         blog_form = BlogForm(request.POST)
 
