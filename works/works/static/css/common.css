@@ -11,6 +11,17 @@ a:focus {
 	outline: none;
 }
 
+.blog-title {
+  text-align: left;
+}
+
+.post-date {
+  color: #9e9e9e;
+  text-align: left;
+  padding: 20px 0px;
+  font-size: 0.95rem;
+}
+
 h2 { font-size: 2.2rem; }
 .tm-thin-font { font-weight: 300; }
 

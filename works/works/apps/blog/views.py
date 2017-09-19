@@ -8,6 +8,7 @@ from works.apps.blog.forms import BlogForm
 def home(request):
     blogs = Blog.objects.all().order_by('-date_created')[:6]
     categorys = Category.objects.all()
+    blogs = [blogs[i:i+2] for i in range(2)]
 
     return render(request,'blog/index.html', {'blogs': blogs, 'categorys': categorys})
 
