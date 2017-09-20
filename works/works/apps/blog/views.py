@@ -29,12 +29,15 @@ def contact(request):
 
 def detail(request, id):
     blog = get_object_or_404(Blog, id=id)
-    return render(request, 'blog/single.html', {'blog': blog})
+    return render(request, 'blog/detail.html', {'blog': blog})
 
-def category(request, category):
-    blogs = Blog.objects.filter(category__name=category)
+def all_blogs(request):
+    blogs = Blog.objects.all()
+    return render(request, 'blog/blogs.html', {'blogs': blogs})
+
+def category(request):
+    blogs = Blog.objects.all()
     return render(request, 'blog/category.html', {'blogs': blogs})
-
 
 def blog_form(request):
     blog_form = BlogForm()

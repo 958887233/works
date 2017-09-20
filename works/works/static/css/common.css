@@ -22,6 +22,10 @@ a:focus {
   font-size: 0.95rem;
 }
 
+tbody tr {
+  font-size: smaller;
+}
+
 h2 { font-size: 2.2rem; }
 .tm-thin-font { font-weight: 300; }
 
