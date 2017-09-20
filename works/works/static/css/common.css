@@ -26,6 +26,59 @@ tbody tr {
   font-size: smaller;
 }
 
+/* ==============
+The list with special bullet points, used both on blog widgets as well as in the footer (both styled here)
+=================*/
+.clean-list {
+  list-style: none;
+}
+
+.clean-list li {
+  line-height: 23px;
+  margin-bottom: 14px;
+}
+
+.clean-list li a:hover,
+.clean-list li a:focus {
+  color: #222;
+}
+
+.clean-list li:before {
+  content: "";
+  background-color: #444;
+  border-style: solid;
+  border-width: 4px 4px;
+  display: block;
+  width: 8px;
+  left: -20px;
+  top: 15px;
+  position: relative;
+}
+
+.footer .clean-list {
+  margin-top: -6px;
+  padding-left: 23px;
+}
+
+.footer .clean-list li {
+  margin-bottom: 5px;
+}
+
+.footer .clean-list li a {
+  color: #aaa;
+  padding-bottom: 5px;
+}
+
+.footer .clean-list li a:hover {
+  color: #ffffff;
+}
+
+.footer .clean-list li:before {
+  left: -21px;
+}
+
+/*---分割线---*/
+
 h2 { font-size: 2.2rem; }
 .tm-thin-font { font-weight: 300; }
 
@@ -80,25 +133,11 @@ h2 { font-size: 2.2rem; }
 }
 
 
-
-
-/*body {
-  font-size: 16px;
-  line-height: 27px;
-  font-family: 'Open Sans', sans-serif;
-  color: #444;
-  background-color: #fff;
-}*/
-
 a {
   color: #5b6268;
 }
 
-a:hover,
-a:focus {
-  text-decoration: none;
-  color: #5b6268;
-}
+
 
 h1 {
   font-size: 45px;
@@ -121,9 +160,6 @@ h3 {
   height: 60px;
 }
 
-hr {
-  border-top-color: #ced5db;
-}
 
 /* ===============
 Font Awesome Icons
@@ -213,241 +249,18 @@ Font Awesome Icons
 	font-size:0;
 	overflow:hidden;
 }
-/*==============
-Styles for the navigation, both mobile and desktop
-================ */
-.clean-nav .nav-pills {
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 16px;
-}
 
-.clean-nav .nav-pills > li {
-  margin-left: 10px;
-}
 
-.clean-nav .nav-pills > li > a {
-  color: #444;
-  padding: 11px 0 11px 20px;
-  line-height: 14px;
-}
 
-.clean-nav .nav-pills > li > a:hover,
-.clean-nav .nav-pills > li > a:focus {
-  color: #222;
-}
 
-.clean-nav .nav-pills > li.dropdown.open.active > a:hover,
-.clean-nav .nav-pills > li.dropdown.open.active > a:focus {
-  color: #222;
-}
 
-.clean-nav .nav-pills .open .dropdown-toggle {
-}
-
-.clean-nav .nav-pills > .active > a {
-}
-
-.clean-nav .nav-pills > .active > a:hover,
-.clean-nav .nav-pills > .active > a:focus {
-}
-
-.clean-nav .nav-pills .dropdown-menu {
-  font-size: 16px;
-  border-radius: 6px;
-}
-
-.clean-nav .caret {
-  border-color: #f8f8f9 transparent transparent transparent !important;
-  display: none;
-}
-
-.clean-nav .dropdown .caret {
-  margin-left: 7px;
-}
-
-.clean-nav .dropdown-menu {
-  background-color: #49545d;
-  border-color: transparent;
-  /*IE 8 Legacy */
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin: 2px 0 0;
-  min-width: 160px;
-  padding: 5px 0;
-}
-
-.clean-nav .dropdown-menu > li > a {
-  color: #f8f8f9;
-  line-height: 30px;
-  white-space: nowrap;
-}
-
-.clean-nav .dropdown-menu > li > a:hover,
-.clean-nav .dropdown-menu > li > a:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-  background-image: none;
-  color: #f8f8f9;
-  filter: none;
-}
-
-.clean-nav .navbar-collapse {
-  box-shadow: none;
-}
-
-.clean-nav .navbar-nav > li > .dropdown-menu {
-  margin-top: 2px;
-}
-
-/* ===========
-The button that expands the navigation in mobile-mode
-============= */
-#mobile-nav-toggle {
-  display: none;
-  margin-top: 10px;
-}
-
-@media (max-width: 767px) {
-  #mobile-nav-toggle {
-    display: block;
-  }
-}
-
-#mobile-nav-toggle a:hover,
-#mobile-nav-toggle a:focus {
-  text-decoration: none;
-}
-
-#mobile-nav-toggle .fa {
-  color: #f8f8f9;
-}
-
-/* ==========
-Mobile version of the navigation
-=============*/
 @media (max-width: 767px) {
   .masthead {
     padding-bottom: 0px;
   }
 
-  .clean-nav {
-    box-shadow: none;
 
-    float: left !important;
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-  }
 
-  .clean-nav .navbar-collapse {
-    max-height: none;
-  }
-
-  .clean-nav .nav-pills > li {
-    margin-left: 0;
-    float: none;
-  }
-
-  .clean-nav .nav-pills > li > a {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-
-  .clean-nav .nav-pills > li a:hover {
-    background-color: #333 !important;
-  }
-
-  .clean-nav .nav-pills > li a {
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
-    color: #444;
-  }
-
-  .clean-nav .nav-pills > li:first-child > a {
-    border-top: none;
-  }
-
-  .clean-nav .nav-pills > li > a:hover,
-  .clean-nav .nav-pills > li > a:focus {
-    background: transparent;
-  }
-
-  .clean-nav .nav-pills > li.dropdown.open.active > a:hover,
-  .clean-nav .nav-pills > li.dropdown.open.active > a:focus {
-    background: transparent;
-  }
-
-  .clean-nav .nav-pills .active > a,
-  .clean-nav .nav-pills .active > a:hover,
-  .clean-nav .nav-pills .active > a:focus {
-    background: transparent;
-  }
-
-  .clean-nav .nav-pills .open .dropdown-toggle {
-    background-color: transparent;
-    border-color: #3e4953;
-    padding-bottom: 7px;
-  }
-
-  .clean-nav .nav-pills .dropdown-toggle .caret {
-    float: right;
-    margin-top: 14px;
-  }
-  .clean-nav .nav-pills .dropdown-menu {
-    background-color: #49545d;
-  }
-
-  .clean-nav .nav-pills .dropdown.open {
-    background-color: #49545d;
-  }
-
-  .clean-nav .caret {
-    border-color: #f8f8f9 transparent transparent transparent !important;
-    border-width: 6px;
-    display: block;
-  }
-
-  .clean-nav .dropdown-menu {
-    margin-top: 0;
-    padding-top: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    border: none;
-  }
-
-  .clean-nav .dropdown-menu > li {
-    margin-left: 35px;
-  }
-
-  .clean-nav .dropdown-menu > li > a {
-    padding-top: 9px;
-    padding-bottom: 9px !important;
-    font-size: 18px;
-    line-height: 27px;
-  }
-
-  .clean-nav .dropdown-menu > li > a:hover,
-  .clean-nav .dropdown-menu > li > a:focus {
-    background-color: transparent;
-  }
-
-  .clean-nav .navbar-nav .open .dropdown-menu > li > a {
-    padding-top: 9px;
-    padding-bottom: 9px;
-    line-height: 27px;
-  }
 
 }
 /* ===========
@@ -472,133 +285,9 @@ Elements that are used througout clean, such as Searchboxes, Blog elements, Widg
   margin: 0 10px 0 10px;
 }
 
-/* The searchbox in the subheader on top of the site */
-.clean-searchbox {
-  float: right;
-  display: inline-block;
-  min-width: 210px;
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
 
-.clean-searchbox form {
-  margin: 0;
-}
 
-.clean-searchbox .fa {
-  color: #7b8690;
-  font-size: 19px;
-}
 
-.clean-searchbox .searchbutton,
-.clean-searchbox .searchfield {
-  color: #7b8690;
-}
-
-.clean-searchbox .searchbutton {
-  display: inline-block;
-  border: none;
-  line-height: 20px;
-  height: 31px;
-  vertical-align: middle;
-}
-
-.clean-searchbox .searchbutton a:hover,
-.clean-searchbox .searchbutton a:focus {
-  text-decoration: none;
-}
-
-.clean-searchbox .searchfield {
-  border: none;
-  height: 22px;
-  line-height: 22px;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  padding: 5px 6px 4px 6px;
-  vertical-align: middle;
-  display: inline-block;
-  margin-bottom: 0;
-  width: 160px;
-  font-size: 16px;
-  margin-left: -4px;
-  outline: none;
-}
-
-.clean-searchbox .searchfield::-webkit-input-placeholder {
-  color: #7b8690;
-}
-
-.clean-searchbox .searchfield:-moz-placeholder {
-  color: #7b8690;
-}
-
-.clean-searchbox .searchfield::-moz-placeholder {
-
-  color: #7b8690;
-}
-
-.clean-searchbox .searchfield:-ms-input-placeholder {
-  color: #7b8690;
-}
-
-.clean-searchbox .searchfield:focus {
-  -webkit-box-shadow: none;
-
-  -moz-box-shadow: none;
-  box-shadow: none;
-}
-
-/* ==============
-The list with special bullet points, used both on blog widgets as well as in the footer (both styled here)
-=================*/
-.clean-list {
-  list-style: none;
-}
-
-.clean-list li {
-  line-height: 23px;
-  margin-bottom: 14px;
-}
-
-.clean-list li a:hover,
-.clean-list li a:focus {
-  color: #222;
-}
-
-.clean-list li:before {
-  content: "";
-  background-color: #444;
-  border-style: solid;
-  border-width: 4px 4px;
-  display: block;
-  width: 8px;
-  left: -20px;
-  top: 15px;
-  position: relative;
-}
-
-.footer .clean-list {
-  margin-top: -6px;
-  padding-left: 23px;
-}
-
-.footer .clean-list li {
-  margin-bottom: 5px;
-}
-
-.footer .clean-list li a {
-  color: #aaa;
-  padding-bottom: 5px;
-}
-
-.footer .clean-list li a:hover {
-  color: #ffffff;
-}
-
-.footer .clean-list li:before {
-  left: -21px;
-}
 
 /* ===========
 Footer widgets

@@ -3,7 +3,6 @@
 {% load custom_markdown %}
 {% block context %}
 
-
 <div class="widewrapper main">
     <div class="container">
         <div class="row">
@@ -21,7 +20,7 @@
                             <h2>{{ blog.title }}</h2>
                         </div>
                         <div class="post-date">
-                            <span>发表于 {{ blog.date_created | date:"Y-m-d H:i" }}</span>
+                            发表于<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>{{ blog.date_created | date:"Y-m-d H:i" }}
                         </div>
                           {{ blog.content | custom_markdown }}
                 </article>
