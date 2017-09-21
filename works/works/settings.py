@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_crontab',
     'pagedown',
     'works.apps.blog',
 )
@@ -90,6 +91,20 @@ DATABASES = {
         'PORT': 3306,
     }
 }
+
+# mail config
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.mxhichina.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'noreply@jialixin.top'
+EMAIL_HOST_PASSWORD = 'HJ120627jh'
+DEFAULT_FROM_EMAIL = 'noreply@jialixin.top'
+
+# cronjobs
+
+CRONJOBS = [
+    ('*/1 * * * *', 'works.apps.blog.cronjobs.send_reminder_mail', '>> /tmp/mail.log'),
+]
 
 
 # Internationalization
