@@ -103,7 +103,7 @@ DEFAULT_FROM_EMAIL = 'noreply@jialixin.top'
 # cronjobs
 
 CRONJOBS = [
-    ('*/1 * * * *', 'works.apps.blog.cronjobs.send_reminder_mail', '>> /tmp/mail.log'),
+    ('*/60 * * * *', 'works.apps.blog.cronjobs.send_reminder_mail', '>> /tmp/mail.log'),
 ]
 
 
