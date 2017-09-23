@@ -1,4 +1,47 @@
 
+@media (max-width: 1024px) {
+    .col-md-8.blog-main {
+      width: 100%;
+    }
+    .col-md-4.blog-aside {
+      width: 100%;
+    }
+
+    .tm-site-name {
+      font-size: 1.8rem;
+      color: #cc9900;
+    }
+
+    .tm-main-nav {
+      font-size: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+      border-radius: 6px;
+      color: black;
+      padding: 5px 32px;
+  }
+}
+
+
+@media (min-width: 1024px ) {
+    .tm-site-name {
+    color: #cc9900;
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 400;
+  }
+
+  .tm-main-nav {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-link {
+    border-radius: 6px;
+    color: black;
+    padding: 10px 40px;
+  }
+}
 
 hr {
   background: #cc9900;
@@ -75,21 +118,6 @@ h3 {
 }
 
 
-.tm-site-name {
-  color: #cc9900;
-  display: block;
-  font-size: 2.6rem;
-  font-weight: 400;
-}
-
-
-.tm-main-nav { font-size: 1.2rem; }
-
-.navbar-nav .nav-link {
-  border-radius: 6px;
-  color: black;
-  padding: 10px 40px;
-}
 
 .nav-item.active .nav-link,
 .nav-link:hover,
@@ -104,9 +132,6 @@ h3 {
   background-color: #fff;
 }
 
-.widewrapper.main {
-
-}
 
 .widewrapper.masthead {
   background-color: #fff;
@@ -479,7 +504,7 @@ The blog main page boxes
   margin-top: 0;
   font-size: 28px;
   margin-bottom: 10px;
-  height: 60px;
+/*  height: 60px;*/
 }
 
 .blog-teaser header h3 a,
@@ -873,8 +898,8 @@ Form styles
 @media (max-width: 767px) {
   .tm-main-nav {
     position: fixed;
-    right: 0;
-    top: 21px;
+    right: 0px;
+    top: 25px;
     z-index: 1000;
   }
   #tmNavbar .navbar-nav .nav-item { float: none; }
