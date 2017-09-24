@@ -3,24 +3,56 @@
 {% load staticfiles %}
 
 {% block context %}
+
 <div class="row">
-<div class="col-md-10 col-md-offset-1">
-    <form class="form-horizontal" action="." method="post">
-      {% csrf_token %}
-      <div class="form-group">
-        <label for="id_title">文章标题:</label>
-        {{ form.title }}
+  <div class="col-md-6 col-md-offset-3">
+    <div class="category-position">
+      <button type="button" id="show-category" class="btn btn-lg btn-block btn-category">选择文章分类 </button>
+    </div>
+    <div class="test110" style="display: none; padding-top: 2rem;">
+      <div class="body clearfix">
+        <ul class="tags">
+          {% for c in categorys %}
+            <li><a href="javascript:;" class="select-category">{{ c.name }}</a></li>
+          {% endfor %}
+            <li>
+              <a href="javascript:;" class="add-category" type="button">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              增加新类别
+            </a>
+            </li>
+        </ul>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">内容</label>
-        {{ form.content }}
-      </div>
-      <div class="form-group">
-        <label for="exampleInputFile">分类</label>
-        {{ form.category }}
-      </div>
-      <button type="submit" class="btn btn- clear-one">提交文章</button>
     </div>
   </div>
 </div>
+<!-- <div class="row">
+  <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+      <form class="form-control" action="." method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_title">文章标题：</label>
+          {{ form.title }}
+        </div>
+        <div class="form-group">
+          <label for="id_content">内容：</label>
+          {{ form.content }}
+        </div>
+        <div class="form-group">
+          <label for="id_category">分类：</label>
+          {{ form.category }}
+        </div>
+        <button type="submit" class="btn btn-clear-one">提交文章</button>
+      </form>
+  </div>
+</div> -->
+
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+    $('#show-category').click(function(){
+      $('.test110').toggle(500)
+    });
+  </script>
 {% endblock %}

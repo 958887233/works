@@ -40,9 +40,10 @@ def category(request):
     return render(request, 'blog/category.html', {'blogs': blogs})
 
 def blog_form(request):
+    categorys = Category.objects.all()
     blog_form = BlogForm()
 
     if request.method == 'POST':
         blog_form = BlogForm(request.POST)
 
-    return render(request, 'blog/edit.html', {'form': blog_form})
+    return render(request, 'blog/edit.html', {'form': blog_form, 'categorys': categorys})

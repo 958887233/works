@@ -43,6 +43,10 @@
   }
 }
 
+.add-category {
+  border: 1px solid #03a9f4 !important;
+}
+
 hr {
   background: #cc9900;
   height: 1px;
@@ -53,6 +57,44 @@ hr {
   margin: 0rem 0rem 3rem;
 }
 
+/* ===============
+Font Awesome Icons
+==================*/
+
+
+::selection {
+  background: #566572;
+  /* Safari */
+  color: #feffff;
+}
+
+::-moz-selection {
+  background: #566572;
+  /* Firefox */
+  color: #feffff;
+}
+
+.masthead {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.masthead #logo {
+  float: left;
+  display: block;
+}
+
+.btn-category {
+  color: #fff;
+  background-color: #cc9900;
+}
+
+.btn-category:hover {
+  color: #fff;
+  background-color: #ffc123;
+}
+
+
 
 a, button { transition: all 0.3s ease; }
 a:hover,
@@ -61,7 +103,32 @@ a:focus {
   outline: none;
 }
 
+/* ===============
+Font Awesome Icons
+==================*/
 
+
+::selection {
+  background: #566572;
+  /* Safari */
+  color: #feffff;
+}
+
+::-moz-selection {
+  background: #566572;
+  /* Firefox */
+  color: #feffff;
+}
+
+.masthead {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.masthead #logo {
+  float: left;
+  display: block;
+}
 a {
   color: #5b6268;
 }
@@ -71,6 +138,7 @@ a:focus {
   text-decoration: none;
   color: #5b6268;
 }
+
 
 /*h1 {
   font-size: 45px;
@@ -687,48 +755,6 @@ The round social icons including the animations
 .social-icon.color-three .inner-circle {
   background-color: #3f8ebd;
 }
-
-
-/*-------------------------*/
-
-/* ===============
-Font Awesome Icons
-==================*/
-.fa {
-  font-size: 24px;
-}
-
-::selection {
-  background: #566572;
-  /* Safari */
-  color: #feffff;
-}
-
-::-moz-selection {
-  background: #566572;
-  /* Firefox */
-  color: #feffff;
-}
-
-.masthead {
-  padding-top: 55px;
-  padding-bottom: 55px;
-}
-
-.masthead #logo {
-  float: left;
-  display: block;
-}
-
-
-
-
-
-
-
-
-
-
 
 
 /* ===========
