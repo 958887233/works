@@ -52,6 +52,8 @@ def blog_form(request):
     return render(request, 'blog/edit.html', {'form': blog_form, 'categorys': categorys})
 
 def wxdemo(request):
-    format_data = 'Hello {}'.format('heyexinxin')
-    # format_data = json.dumps(format_data)
-    return JsonResponse(format_data)
+    format_data = {'name': 'jialixin', 'age': 26}
+    # format_data = 'Hello {}'.format('heyexinxin')
+    # format_data =
+    # return format_data
+    return json.dumps(format_data)
