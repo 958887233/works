@@ -1,4 +1,4 @@
-#coding:utf8
+#coding=utf-8
 import json
 from django.shortcuts import render, get_object_or_404
 from works.apps.blog.models import Blog, Category
@@ -53,7 +53,5 @@ def blog_form(request):
 
 from django.core import serializers
 def wxdemo(request):
-    data = serializers.serialize('json', Category.objects.all())
-    # data = {'name': 'jialixin', 'age': 26}
-    # return format_data
+    data = serializers.serialize('json', Blog.objects.all())
     return HttpResponse(data, content_type="application/json")
