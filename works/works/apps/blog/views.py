@@ -51,9 +51,9 @@ def blog_form(request):
 
     return render(request, 'blog/edit.html', {'form': blog_form, 'categorys': categorys})
 
+from django.core import serializers
 def wxdemo(request):
-    data = {'name': 'jialixin', 'age': 26}
-    # format_data = 'Hello {}'.format('heyexinxin')
-    # format_data =
+    data = serializers.serialize('json', Category.objects.all())
+    # data = {'name': 'jialixin', 'age': 26}
     # return format_data
-    return HttpResponse(json.dumps(data), content_type="application/json")
+    return HttpResponse(data, content_type="application/json")
