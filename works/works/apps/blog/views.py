@@ -3,6 +3,7 @@ import simplejson as json
 from django.shortcuts import render, get_object_or_404
 from works.apps.blog.models import Blog, Category
 from works.apps.blog.forms import BlogForm
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -51,7 +52,6 @@ def blog_form(request):
     return render(request, 'blog/edit.html', {'form': blog_form, 'categorys': categorys})
 
 def wxdemo(request):
-    import ipdb; ipdb.set_trace()
-    data = request.GET.get('name', 'heyexinxin')
-    format_data = 'Hello {}'.format(data)
-    return json.dumps(format_data)
+    format_data = 'Hello {}'.format('heyexinxin')
+    # format_data = json.dumps(format_data)
+    return JsonResponse(format_data)
