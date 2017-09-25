@@ -1,3 +1,4 @@
+import simplejson as json
 from django.shortcuts import render, get_object_or_404
 from works.apps.blog.models import Blog, Category
 from works.apps.blog.forms import BlogForm
@@ -47,3 +48,8 @@ def blog_form(request):
         blog_form = BlogForm(request.POST)
 
     return render(request, 'blog/edit.html', {'form': blog_form, 'categorys': categorys})
+
+def wxdemo(request, data):
+    format_data = 'Hello {}'.format(data)
+
+    return json.dumps(format_data)
