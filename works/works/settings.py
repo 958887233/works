@@ -92,6 +92,17 @@ DATABASES = {
     }
 }
 
+#redis cache
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': '127.0.0.1:6379',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'redis_cache.client.DefaultClient',
+        }
+    }
+}
+
 # mail config
 EMAIL_USE_TLS = False
 EMAIL_HOST = 'smtp.mxhichina.com'
@@ -103,7 +114,7 @@ DEFAULT_FROM_EMAIL = 'noreply@jialixin.top'
 # cronjobs
 
 CRONJOBS = [
-    ('*/60 * * * *', 'works.apps.blog.cronjobs.send_reminder_mail', '>> /tmp/mail.log'),
+    ('*/60 * * * *', 'works.apps.blog.cronjobs.send_reminder_mail', '>>/tmp/mail.log'),
 ]
 
 
@@ -133,6 +144,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = location('media')
 
 SERVER_HOST = 'https://www.jialixin.top'
+
 
 
 try:

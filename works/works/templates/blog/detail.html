@@ -20,7 +20,7 @@
                             <h2>{{ blog.title }}</h2>
                         </div>
                         <div class="post-date">
-                            <span>发表于 🕔 {{ blog.date_created | date:"Y-m-d H:i" }}</span>
+                            <span>发表于 <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp;{{ blog.date_created | date:"Y-m-d H:i" }}</span>&nbsp;&nbsp;&nbsp;
                         </div>
                           {{ blog.content | custom_markdown }}
                 </article>
