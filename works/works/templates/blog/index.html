@@ -12,7 +12,7 @@
               <div class="col-md-6 col-sm-6">
                 <article class="blog-teaser">
                   <header>
-                    <img src="{% static 'img/1.jpg'%}" alt="">
+                    <img src="{{ blog.0.cover.url }}" alt="">
                     <h3><a href="{% url 'detail' blog.0.id %}">{{ blog.0.title }}</a></h3>
                     <span class="meta">{{ blog.0.date_created | date:"Y-m-d" }}</span>
                     <hr>
@@ -28,7 +28,7 @@
               <div class="col-md-6 col-sm-6">
                 <article class="blog-teaser">
                   <header>
-                    <img src="{% static 'img/2.jpg'%}" alt="">
+                    <img src="{{ blog.1.cover.url }}" alt="">
                     <h3><a href="{% url 'detail' blog.1.id %}">{{ blog.1.title }}</a></h3>
                     <span class="meta">{{ blog.1.date_created | date:"Y-m-d" }}</span>
                     <hr>
