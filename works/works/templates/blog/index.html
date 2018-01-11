@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 blog-main">
-          {% for blog in blogs %}
+          {% for blog in display_blogs %}
             <div class="row">
               <div class="col-md-6 col-sm-6">
                 <article class="blog-teaser">
@@ -48,16 +48,13 @@
         <aside class="col-md-4 blog-aside">
           <div class="aside-widget">
             <header>
-              <h3>精品文章</h3>
+              <h3>文章分类</h3>
             </header>
             <div class="body">
               <ul class="clean-list">
-                <li><a href="">Clean - Responsive HTML5 Template</a></li>
-                <li><a href="">Responsive Pricing Table</a></li>
-                <li><a href="">Yellow HTML5 Template</a></li>
-                <li><a href="">Blackor Responsive Theme</a></li>
-                <li><a href="">Portfolio Bootstrap Template</a></li>
-                <li><a href="">Clean Slider Template</a></li>
+                {% for category in categorys %}
+                  <li><a href="">{{ category }}</a></li>
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -68,17 +65,14 @@
             </header>
             <div class="body">
                 <ul class="clean-list">
-                  <li><a href="">Blackor Responsive Theme</a></li>
-                  <li><a href="">Portfolio Bootstrap Template</a></li>
-                  <li><a href="">Clean Slider Template</a></li>
-                  <li><a href="">Clean - Responsive HTML5 Template</a></li>
-                  <li><a href="">Responsive Pricing Table</a></li>
-                  <li><a href="">Yellow HTML5 Template</a></li>
+                  {% for blog in blogs %}
+                    <li><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></li>
+                  {% endfor %}
                 </ul>
             </div>
           </div>
 
-          <div class="aside-widget">
+<!--           <div class="aside-widget">
             <header>
               <h3>标签</h3>
             </header>
@@ -89,7 +83,7 @@
                 {% endfor %}
               </ul>
             </div>
-          </div>
+          </div> -->
         </aside>
       </div>
     </div>
